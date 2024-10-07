@@ -8,26 +8,29 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body onload="rollDice()">
+<body>
     <h1 style="border-bottom: 1px solid black;">DICE ROLLER!</h1>
     <p style="font-style: italic;"> <strong>Press "Roll Dice!" to roll the dice.</strong></p>
 	<br>
 
-	<button onclick="rollDice()">Roll Dice!</button>
 	<div id="dicerollerJSON"></div>
+	<button onclick="rollDice()">Roll Dice!</button>
 
 	<script>
 		async function rollDice() {
 			const serverUrl = "http://localhost:3000";
-			
 			const url = serverUrl + "/diceroller";
+
+			const button = document.querySelector('button'); // Get the button element			
 			const response = await fetch(url);
 			const randomNumber = await response.json();
 
 			const dicerollerJSONField = document.getElementById("dicerollerJSON");
-			const dicerollerResponseText = "<pre>"+JSON.stringify(randomNumber)+"</pre>";
+			const dicerollerResponseText = "<pre>" + JSON.stringify(randomNumber) + "</pre>";
 			dicerollerJSONField.innerHTML = dicerollerResponseText;
 			}
+
+			
 	</script>
 </body>
 </html>
