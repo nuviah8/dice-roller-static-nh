@@ -21,13 +21,19 @@
 			const serverUrl = "http://localhost:3000";
 			const url = serverUrl + "/diceroller";
 
-			const button = document.querySelector('button'); // Get the button element			
+			const button = document.querySelector('button'); 
 			const response = await fetch(url);
-			const randomNumber = await response.json();
 
-			const dicerollerJSONField = document.getElementById("dicerollerJSON");
-			const dicerollerResponseText = "<pre>" + JSON.stringify(randomNumber) + "</pre>";
-			dicerollerJSONField.innerHTML = dicerollerResponseText;
+			try {
+				const randomNumber = await response.json();
+
+				const dicerollerJSONField = document.getElementById("dicerollerJSON");
+				const dicerollerResponseText = "<pre>" + JSON.stringify(randomNumber) + "</pre>";
+				dicerollerJSONField.innerHTML = dicerollerResponseText;
+			} catch(error) {
+				console.error('CORS Error:', error);
+                document.getElementById('result').innerText = 'CORS Error: ' + error.message;
+            }
 			}
 
 			
