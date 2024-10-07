@@ -28,6 +28,12 @@
 			const dicerollerJSONField = document.getElementById("dicerollerJSON");
 			const dicerollerResponseText = "<pre>"+JSON+stringify(randomNumber, null, 4)+"</pre>";
 			dicerollerJSONField.innerHTML = dicerollerResponseText;
+
+			// Also display the random number in a separate div
+			const displayNumberField = document.createElement("div");
+            displayNumberField.textContent = randomNumber.randomNumber;
+            dicerollerJSONField.appendChild(displayNumberField);
+
 			}
 	</script>
 </body>
