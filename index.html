@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roller!</title>
-    <!-- <link rel="icon" type="image/x-icon" href="star_symbol.png"> -->
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -26,7 +25,7 @@
 			const randomNumber = await response.json();
 
 			const dicerollerJSONField = document.getElementById("dicerollerJSON");
-			const dicerollerResponseText = "<pre>"+JSON+stringify(randomNumber, null, 4)+"</pre>";
+			const dicerollerResponseText = "<pre>"+JSON.stringify(randomNumber, null, 4)+"</pre>";
 			dicerollerJSONField.innerHTML = dicerollerResponseText;
 
 			// Also display the random number in a separate div
@@ -38,6 +37,7 @@
 	</script>
 </body>
 </html>
+
 
 
 
