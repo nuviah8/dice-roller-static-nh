@@ -15,20 +15,19 @@
 	<br>
 
 	<button onclick="rollDice()">Roll Dice</button>
-
 	<div id="dicerollerJSON"></div>
-		<script>
-			async function rollDice() {
-				const url = document.getElementById("urlInput").value + "/diceroller";
-				const response = await fetch(url);
-				const dicerollerResponse = await response.json();
 
-				const dicerollerJSONField = document.getElementById("dicerollerJSON")
-				const dicerollerResponseText = "<pre>"+JSON+stringify(dicerollerResponse, null, 4)+"</pre"
-				dicerollerJSONField.innerHTML = dicerollerResponseText
+	<script>
+		async function rollDice() {
+			const url = document.getElementById("urlInput").value + "/diceroller";
+			const response = await fetch(url);
+			const randomNumber = await response.json();
+
+			const dicerollerJSONField = document.getElementById("dicerollerJSON");
+			const dicerollerResponseText = "<pre>"+JSON+stringify(randomNumber, null, 4)+"</pre>";
+			dicerollerJSONField.innerHTML = dicerollerResponseText;
 			}
-		</script>
-	</div>
+	</script>
 </body>
 </html>
 
