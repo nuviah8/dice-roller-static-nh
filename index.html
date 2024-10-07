@@ -19,7 +19,9 @@
 
 	<script>
 		async function rollDice() {
-			const url = document.getElementById("urlInput").value + "/diceroller";
+			const serverUrl = "http://localhost:3000";
+			
+			const url = serverUrl + "/diceroller";
 			const response = await fetch(url);
 			const randomNumber = await response.json();
 
