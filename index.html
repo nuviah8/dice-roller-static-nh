@@ -11,24 +11,23 @@
 
 <body onload="rollDice()">
     <h1 style="border-bottom: 1px solid black;">DICE ROLLER!</h1>
-    <p style="font-style: italic;"> <strong>This is a dice roller that can be used when playing Yahtzee!</strong><br><br> How it works: Each number below represents one of the five 6-sides dice. Press "Roll Dice!" to roll all of the dice. </p>
+    <p style="font-style: italic;"> <strong>Press "Roll Dice!" to roll all of the dice.</p>
+	<br>
 
-	
 	<button onclick="rollDice()">Roll Dice</button>
-	<div id="diceroller">Random Number</div><br /><br />
 
 	<div id="dicerollerJSON"></div>
-	<script>
-		async function rollDice() {
-			const url = document.getElementById("urlInput").value + "/diceroller";
-			const response = await fetch(url);
-			const dicerollerResponse = await response.json();
+		<script>
+			async function rollDice() {
+				const url = document.getElementById("urlInput").value + "/diceroller";
+				const response = await fetch(url);
+				const dicerollerResponse = await response.json();
 
-			const dicerollerJSONField = document.getElementById("dicerollerJSON")
-			const dicerollerResponseText = "<pre>"+JSON+stringify(dicerollerResponse, null, 4)+"</pre"
-			dicerollerJSONField.innerHTML = dicerollerResponseText
-		}
-	</script>
+				const dicerollerJSONField = document.getElementById("dicerollerJSON")
+				const dicerollerResponseText = "<pre>"+JSON+stringify(dicerollerResponse, null, 4)+"</pre"
+				dicerollerJSONField.innerHTML = dicerollerResponseText
+			}
+		</script>
 	</div>
 </body>
 </html>
