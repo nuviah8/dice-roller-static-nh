@@ -11,7 +11,7 @@
 
 <body onload="rollDice()">
     <h1 style="border-bottom: 1px solid black;">DICE ROLLER!</h1>
-    <p style="font-style: italic;"> <strong>Press "Roll Dice!" to roll all of the dice.</p>
+    <p style="font-style: italic;"> <strong>Press "Roll Dice!" to roll all of the dice.</strong></p>
 	<br>
 
 	<button onclick="rollDice()">Roll Dice</button>
@@ -31,7 +31,7 @@
 
 			// Also display the random number in a separate div
 			const displayNumberField = document.createElement("div");
-            displayNumberField.textContent = randomNumber.randomNumber;
+            displayNumberField.textContent = "Dice Number:" + randomNumber.randomNumber;
             dicerollerJSONField.appendChild(displayNumberField);
 
 			}
